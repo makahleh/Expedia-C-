@@ -1,0 +1,40 @@
+﻿@model Index
+@using HotelsGarden.Models.View
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="text-success text-center">Welcome to hotels garden</h1>
+
+<h4 class="text-info m-t-20">In our site you can find the best prices ever, trust me, the site is using Expedia's engine 😉 </h4>
+<div class="col-md-12 m-t-20">
+    <div class="row">
+        @Html.Partial("_SearchFilters", Model)
+    </div>
+
+    @if (Model.Offers.Hotels.Any())
+    {
+        <hr />
+        <div class="row" id="results">
+            <h3 class="text-warning">Search results: (@Model.Offers.Hotels.Count()) <small><i class="text-muted pull-right">Click on any hotel below to see the details</i></small></h3>
+        </div>
+        @foreach (Hotel hotel in Model.Offers.Hotels)
+        {
+            @Html.Partial("_Hotel", hotel)
+        }
+    }
+</div>
+
+@section Scripts{
+    @if (Model.Offers.Hotels.Any())
+    {
+        <script>
+            $(document).ready(function () {
+                $('html, body').animate({
+                    scrollTop: $("#results").offset().top - 50
+                }, 1000);
+            });
+        </script>
+    }
+}

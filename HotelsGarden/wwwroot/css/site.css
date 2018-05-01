@@ -1,0 +1,102 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.m-15 {
+    margin: 15px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.fixed-bottom {
+    padding: 15px;
+    position: fixed;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffcb00;
+    color: #00355f;
+    border-top: #00355f 1px solid;
+    z-index: 25;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.navbar-inverse {
+    background-color: #ffcb00;
+    border-color: #00355f;
+    color: #00355f;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #00355f;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+        color: #00355f;
+    }
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.list-unstyled.list-custom {
+    background: rgba(255, 203, 0, 0.50);
+    color: #00355f;
+    float: left;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+    .list-unstyled.list-custom li {
+        padding: 2px;
+    }
+    
+    .custom-group > * {
+        border: 1px solid #00355f;
+        border-radius: 4px;
+    }
+
+.custom-group .input-group-addon {
+    background-color: #ffcb00;
+    color: #00355f;
+}

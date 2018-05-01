@@ -1,0 +1,86 @@
+﻿@model Index
+@using HotelsGarden.Models.View
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "row" }))
+{
+    <div class="form-group col-md-6">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.DestinationName)">@Html.DisplayNameFor(model => model.Filters.DestinationName)</label>
+            @Html.TextBoxFor(model => model.Filters.DestinationName, new { @class = "form-control", placeholder = "Tell us which city you are visiting..." })
+            <span class="input-group-addon"> <i class="glyphicon glyphicon-map-marker"></i></span>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.LengthOfStay)">@Html.DisplayNameFor(model => model.Filters.LengthOfStay)</label>
+            @Html.TextBoxFor(model => model.Filters.LengthOfStay, new { @class = "form-control", type = "number", min = 0, step = 1, placeholder = "Tell us how much days you are staying..." })
+            <span class="input-group-addon"> <i class="glyphicon glyphicon-time"></i></span>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MinTripStartDate)">@Html.DisplayNameFor(model => model.Filters.MinTripStartDate)</label>
+            @Html.TextBoxFor(model => model.Filters.MinTripStartDate, new { @class = "form-control", type = "date", min = DateTime.Now.ToString(Constants.JavascriptDateTimeFormat) })
+            <span class="input-group-addon"> <i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MaxTripStartDate)">@Html.DisplayNameFor(model => model.Filters.MaxTripStartDate)</label>
+            @Html.TextBoxFor(model => model.Filters.MaxTripStartDate, new { @class = "form-control", type = "date", min = DateTime.Now.ToString(Constants.JavascriptDateTimeFormat) })
+            <span class="input-group-addon"> <i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MinGuestRating)">@Html.DisplayNameFor(model => model.Filters.MinGuestRating)</label>
+            @Html.TextBoxFor(model => model.Filters.MinGuestRating, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MinStarRating)">@Html.DisplayNameFor(model => model.Filters.MinStarRating)</label>
+            @Html.TextBoxFor(model => model.Filters.MinStarRating, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MinTotalRate)">@Html.DisplayNameFor(model => model.Filters.MinTotalRate)</label>
+            @Html.TextBoxFor(model => model.Filters.MinTotalRate, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MaxGuestRating)">@Html.DisplayNameFor(model => model.Filters.MaxGuestRating)</label>
+            @Html.TextBoxFor(model => model.Filters.MaxGuestRating, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MaxStarRating)">@Html.DisplayNameFor(model => model.Filters.MaxStarRating)</label>
+            @Html.TextBoxFor(model => model.Filters.MaxStarRating, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <div class="input-group custom-group">
+            <label class="input-group-addon" for="@Html.IdFor(model => model.Filters.MaxTotalRate)">@Html.DisplayNameFor(model => model.Filters.MaxTotalRate)</label>
+            @Html.TextBoxFor(model => model.Filters.MaxTotalRate, new { @class = "form-control", type = "number", min = 0, max = 5, step = 0.25, placeholder = "0 to 5" })
+            <span class="input-group-addon"> / 5</span>
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <button class="btn btn-primary" type="submit">
+            Search
+        </button>
+        <button class="btn btn-warning" type="reset">
+            Reset
+        </button>
+        <small class="text-muted pull-right">* Keep the default value to exclude the filter</small>
+    </div>
+}
