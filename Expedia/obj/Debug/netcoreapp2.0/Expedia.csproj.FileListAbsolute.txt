@@ -1,0 +1,11 @@
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\bin\Debug\netcoreapp2.0\Expedia.deps.json
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\bin\Debug\netcoreapp2.0\Expedia.runtimeconfig.json
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\bin\Debug\netcoreapp2.0\Expedia.runtimeconfig.dev.json
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\bin\Debug\netcoreapp2.0\Expedia.dll
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\bin\Debug\netcoreapp2.0\Expedia.pdb
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.csprojResolveAssemblyReference.cache
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.csproj.CoreCompileInputs.cache
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.AssemblyInfoInputs.cache
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.AssemblyInfo.cs
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.dll
+C:\Users\DEll\Desktop\copy\Expedia\Expedia\obj\Debug\netcoreapp2.0\Expedia.pdb

@@ -1,7 +1,0 @@
-language: csharp
-solution: HotelsGarden.sln
-mono: none
-dotnet: 2.1.4
-script:
- - dotnet restore
- - dotnet build
