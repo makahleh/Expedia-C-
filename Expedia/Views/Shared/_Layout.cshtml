@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Expedia</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="~/font-awesome-4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/slick/slick.css"  />
@@ -16,8 +15,98 @@
     @RenderSection("Styles", false)
 </head>
 <body>
+    <div class="tm-top-bar-bg"></div>
+    <div class="tm-top-bar" id="tm-top-bar">
+        <!-- Top Navbar -->
+        <div class="container">
+            <div class="row">
 
-        @RenderBody()
+                <nav class="navbar navbar-expand-lg narbar-light">
+                    <a class="navbar-brand mr-auto" href="#">
+                        <img src="img/logo.png" alt="Site logo">
+                        Level
+                    </a>
+                    <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-4">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-6">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+
+    <footer class="tm-bg-dark-blue">
+        <div class="container">
+            <div class="row">
+                <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
+                    Copyright &copy; <span class="tm-current-year">2018</span> Your Company
+
+                    - Design: <a href="https://www.facebook.com/tooplate" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- load JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->
+    <script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+    <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script>
+        function setPageNav() {
+            if ($(window).width() > 991) {
+                $('#tm-top-bar').singlePageNav({
+                    currentClass: 'active',
+                    offset: 79
+                });
+            }
+            else {
+                $('#tm-top-bar').singlePageNav({
+                    currentClass: 'active',
+                    offset: 65
+                });
+            }
+        }
+
+        $(document).ready(function () {
+
+            $(window).on("scroll", function () {
+                if ($(window).scrollTop() > 100) {
+                    $(".tm-top-bar").addClass("active");
+                } else {
+                    //remove the background property so it comes transparent again (defined in your css)
+                    $(".tm-top-bar").removeClass("active");
+                }
+            });
+
+            setPageNav();
+
+            $(window).resize(function () {
+                setPageNav();
+            });
+
+            // Close navbar after clicked
+            $('.nav-link').click(function () {
+                $('#mainNav').removeClass('show');
+            });
+
+            // Update the current year in copyright
+            $('.tm-current-year').text(new Date().getFullYear());
+        });
+    </script>
 
     @RenderSection("Scripts", required: false)
 </body>
